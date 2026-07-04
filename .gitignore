@@ -1,0 +1,16 @@
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.claude/projects/
+.claude/sessions/
+.claude/shell-snapshots/
+.claude/telemetry/
+.claude/file-history/
+.claude/backups/
+node_modules/
+tmp/
+*.log
+*.tmp
+dados/*
+!dados/README.md

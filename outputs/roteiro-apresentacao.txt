@@ -1,0 +1,49 @@
+ROTEIRO DE APRESENTACAO - SITE DR. GUTTO VILHENA
+
+Duracao sugerida: 3 a 5 minutos
+
+ANTES DE COMECAR
+- Abra o site: https://dr-gutto-vilhena.vercel.app/
+- Confirme que o WhatsApp esta funcionando.
+- Deixe o PDF aberto como plano B.
+- Coloque o celular no modo silencioso e use a tela na vertical.
+
+ABERTURA
+"Dr. Gutto, preparei uma proposta de site profissional baseada nas informacoes
+publicas do seu perfil. A ideia e apresentar seu trabalho com clareza, transmitir
+confianca e facilitar o contato dos pacientes."
+
+1. PRIMEIRA TELA
+"Aqui o paciente encontra imediatamente seu nome, registro profissional,
+especialidades e o botao para agendar uma avaliacao pelo WhatsApp."
+
+2. ESPECIALIDADES
+"O site organiza as principais areas de atendimento em blocos simples, para que
+o paciente entenda rapidamente como o senhor pode ajuda-lo."
+
+3. ABORDAGEM
+"Esta parte apresenta uma jornada clara: avaliacao, planejamento e
+acompanhamento. Ela ajuda a reduzir duvidas antes do primeiro contato."
+
+4. CONTATO
+"No final, o paciente encontra o endereco do consultorio, o numero, o botao do
+WhatsApp e o Instagram profissional. O WhatsApp ja abre com uma mensagem pronta."
+
+PERGUNTA DE FECHAMENTO
+"Essa direcao visual representa a forma como o senhor gostaria de se apresentar
+na internet?"
+
+DADOS PARA A VERSAO DEFINITIVA
+- Fotos reais do espaco e dos atendimentos autorizados
+- Logo ou assinatura visual, se houver
+- Link de agendamento, se houver
+- Revisao e aprovacao final dos textos
+
+DADOS JA CONFIRMADOS
+- Endereco: R. Martins Alfenas, 1918 - Centro, Alfenas-MG, CEP 37132-032
+- Google Maps: https://maps.app.goo.gl/GqoGFmA3ZqCaj3mr6
+- Horario: comercial, sem necessidade de exibir no site atual
+
+ARQUIVOS DE BACKUP
+- PDF: https://dr-gutto-vilhena.vercel.app/dr-gutto-vilhena-apresentacao-site.pdf
+- ZIP: https://dr-gutto-vilhena.vercel.app/site-dr-gutto-offline.zip
