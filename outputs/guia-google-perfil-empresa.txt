@@ -30,7 +30,6 @@ CEP 37132-032
 4. Telefone e site
 Telefone/WhatsApp: 35 99133-8862
 Site atual: https://www.drguttovilhena.com.br/
-Depois trocar pelo domínio próprio quando ele estiver conectado no Vercel.
 
 5. Horários
 Segunda a sexta: 8h30 às 19h
@@ -55,6 +54,9 @@ Foto da fachada ou entrada
 Foto da recepção
 Foto da sala de atendimento, se estiver adequada
 Logo ou assinatura visual
+
+Logo quadrada pronta para upload no Google:
+https://www.drguttovilhena.com.br/assets/logo-dr-gutto-google-perfil.png
 
 9. Primeiras publicações no Google
 Publicação 1:
