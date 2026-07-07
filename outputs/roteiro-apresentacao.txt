@@ -3,21 +3,21 @@ ROTEIRO DE APRESENTACAO - SITE DR. GUTTO VILHENA
 Duracao sugerida: 3 a 5 minutos
 
 ANTES DE COMECAR
-- Abra o site: https://dr-gutto-vilhena.vercel.app/
-- Confirme que o WhatsApp esta funcionando.
+- Abra o site: https://www.drguttovilhena.com.br/
+- Confirme que o WhatsApp, o e-mail e o botao de rota estao funcionando.
 - Deixe o PDF aberto como plano B.
 - Coloque o celular no modo silencioso e use a tela na vertical.
 
 ABERTURA
-"Dr. Gutto, preparei uma proposta de site profissional baseada nas informacoes
-publicas do seu perfil. A ideia e apresentar seu trabalho com clareza, transmitir
+"Dr. Gutto, preparei uma proposta de site profissional usando os dados que o
+senhor confirmou. A ideia e apresentar seu trabalho com clareza, transmitir
 confianca e facilitar o contato dos pacientes."
 
 1. PRIMEIRA TELA
 "Aqui o paciente encontra imediatamente seu nome, registro profissional,
-especialidades e o botao para agendar uma avaliacao pelo WhatsApp."
+areas de atendimento e o botao para agendar uma avaliacao pelo WhatsApp."
 
-2. ESPECIALIDADES
+2. ATENDIMENTOS
 "O site organiza as principais areas de atendimento em blocos simples, para que
 o paciente entenda rapidamente como o senhor pode ajuda-lo."
 
@@ -25,9 +25,15 @@ o paciente entenda rapidamente como o senhor pode ajuda-lo."
 "Esta parte apresenta uma jornada clara: avaliacao, planejamento e
 acompanhamento. Ela ajuda a reduzir duvidas antes do primeiro contato."
 
-4. CONTATO
-"No final, o paciente encontra o endereco do consultorio, o numero, o botao do
-WhatsApp e o Instagram profissional. O WhatsApp ja abre com uma mensagem pronta."
+4. DÚVIDAS FREQUENTES
+"Inclui tambem uma area de perguntas frequentes, com respostas sobre avaliacao,
+implantes, endereco, exames e horarios. Isso ajuda o paciente e melhora o conteudo
+do site para buscas locais no Google."
+
+5. CONTATO
+"No final, o paciente encontra o endereco do consultorio, rota no Google Maps,
+telefone, WhatsApp, e-mail, horarios e Instagram profissional. O WhatsApp ja abre
+com uma mensagem pronta."
 
 PERGUNTA DE FECHAMENTO
 "Essa direcao visual representa a forma como o senhor gostaria de se apresentar
@@ -35,15 +41,21 @@ na internet?"
 
 DADOS PARA A VERSAO DEFINITIVA
 - Fotos reais do espaco e dos atendimentos autorizados
-- Logo ou assinatura visual, se houver
 - Link de agendamento, se houver
 - Revisao e aprovacao final dos textos
+- Dominio oficial, caso queira trocar o link atual por um dominio proprio
+- Conexao do dominio proprio no Vercel
+- Criacao e verificacao do Perfil da Empresa no Google
 
 DADOS JA CONFIRMADOS
 - Endereco: R. Martins Alfenas, 1918 - Centro, Alfenas-MG, CEP 37132-032
 - Google Maps: https://maps.app.goo.gl/GqoGFmA3ZqCaj3mr6
-- Horario: comercial, sem necessidade de exibir no site atual
+- Telefone/WhatsApp: 35 99133-8862
+- E-mail: guttodentista@outlook.com
+- Horario: segunda a sexta, 8h30 as 19h; sabado, 9h as 12h
 
 ARQUIVOS DE BACKUP
-- PDF: https://dr-gutto-vilhena.vercel.app/dr-gutto-vilhena-apresentacao-site.pdf
-- ZIP: https://dr-gutto-vilhena.vercel.app/site-dr-gutto-offline.zip
+- PDF: https://www.drguttovilhena.com.br/dr-gutto-vilhena-apresentacao-site.pdf
+- ZIP: https://www.drguttovilhena.com.br/site-dr-gutto-offline.zip
+- Politica de privacidade: https://www.drguttovilhena.com.br/privacidade.html
+- Guia do Perfil da Empresa no Google: https://www.drguttovilhena.com.br/guia-google-perfil-empresa.txt

@@ -20,17 +20,16 @@
 
 - **WhatsApp:** +55 35 99133-8862
 - **Instagram:** https://www.instagram.com/dr.guttovilhena/
-- **Site:** https://dr-gutto-vilhena.vercel.app/
+- **Site:** https://www.drguttovilhena.com.br/
 - **Endereço:** R. Martins Alfenas, 1918 - Centro, Alfenas-MG, CEP 37132-032
 - **Google Maps:** https://maps.app.goo.gl/GqoGFmA3ZqCaj3mr6
-- **Horário:** horário comercial informado; não exibir no site por enquanto.
+- **Horário:** segunda a sexta, das 8h30 às 19h; sábado, das 9h às 12h.
 - **Site local:** `outputs/`
 
 ## Informações pendentes
 
 - Foto profissional em alta resolução
 - Logo oficial em PNG
-- Horário detalhado, se for necessário para materiais futuros
 - Composição e funções da equipe
 - Processo de agendamento e acompanhamento de pacientes
 - Meta de novos pacientes e orçamento de mídia

@@ -6,7 +6,7 @@ O site institucional está em `outputs/`.
 
 ## Endereço publicado
 
-https://dr-gutto-vilhena.vercel.app/
+https://www.drguttovilhena.com.br/
 
 ## Como usar no MazyOS
 

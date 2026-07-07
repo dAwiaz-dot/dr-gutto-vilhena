@@ -1,0 +1,77 @@
+GUIA PARA CRIAR O PERFIL DA EMPRESA NO GOOGLE - DR. GUTTO JORDÃO VILHENA
+
+Objetivo
+Criar uma presença local correta no Google Search e Google Maps, usando dados reais do consultório e evitando excesso de palavras-chave no nome.
+
+1. Nome do perfil
+Use:
+Dr. Gutto Jordão Vilhena
+
+Evite nomes como:
+Dr. Gutto Jordão Vilhena - Implantes Dentários em Alfenas
+Dr. Gutto Dentista Alfenas
+
+O Google recomenda que o nome represente a empresa como ela é reconhecida no mundo real.
+
+2. Categoria principal sugerida
+Dentista
+
+Categorias adicionais possíveis, se aparecerem na conta e fizerem sentido para a atuação confirmada:
+Clínica odontológica
+Ortodontista
+Implantodontista
+
+3. Endereço
+Rua Martins Alfenas, 1918
+Centro
+Alfenas - MG
+CEP 37132-032
+
+4. Telefone e site
+Telefone/WhatsApp: 35 99133-8862
+Site atual: https://www.drguttovilhena.com.br/
+Depois trocar pelo domínio próprio quando ele estiver conectado no Vercel.
+
+5. Horários
+Segunda a sexta: 8h30 às 19h
+Sábado: 9h às 12h
+Domingo: fechado
+
+6. Descrição pronta para o Perfil da Empresa
+Dr. Gutto Jordão Vilhena é cirurgião-dentista em Alfenas-MG, CRO-MG 64.064, com atendimento em implantodontia, ortodontia, clínica geral e avaliação odontológica. O consultório fica na Rua Martins Alfenas, 1918, Centro. O atendimento é conduzido com planejamento individual, explicação clara das etapas e orientação sobre possibilidades de tratamento conforme avaliação clínica.
+
+7. Serviços para cadastrar
+Avaliação odontológica
+Implantes dentários
+Ortodontia
+Clínica geral odontológica
+Planejamento odontológico
+Acompanhamento odontológico
+
+8. Fotos mínimas para começar
+Mesmo sem muitas fotos, tente cadastrar pelo menos:
+Foto do Dr. Gutto
+Foto da fachada ou entrada
+Foto da recepção
+Foto da sala de atendimento, se estiver adequada
+Logo ou assinatura visual
+
+9. Primeiras publicações no Google
+Publicação 1:
+Avaliação odontológica em Alfenas-MG
+O consultório do Dr. Gutto Jordão Vilhena atende na Rua Martins Alfenas, 1918, Centro. Para agendar uma avaliação, entre em contato pelo WhatsApp: 35 99133-8862.
+
+Publicação 2:
+Implantes dentários
+A indicação de implantes depende de avaliação clínica, exames e planejamento individual. O primeiro passo é entender o caso com calma e esclarecer as possibilidades de tratamento.
+
+Publicação 3:
+Ortodontia
+A avaliação ortodôntica ajuda a entender alinhamento dentário, mordida e alternativas de tratamento de acordo com cada necessidade.
+
+10. Cuidados importantes
+Não adicionar cidade, telefone, promoções ou palavras-chave extras no nome do perfil.
+Não prometer resultados.
+Não usar fotos de pacientes sem autorização formal.
+Manter telefone, endereço, horário e site iguais aos dados do site.
+Responder avaliações com cuidado, sem expor dados de saúde do paciente.

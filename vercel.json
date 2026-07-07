@@ -1,0 +1,52 @@
+{
+  "rewrites": [
+    {
+      "source": "/privacidade",
+      "destination": "/outputs/privacidade.html"
+    },
+    {
+      "source": "/privacidade.html",
+      "destination": "/outputs/privacidade.html"
+    },
+    {
+      "source": "/assets/(.*)",
+      "destination": "/outputs/assets/$1"
+    },
+    {
+      "source": "/styles.css",
+      "destination": "/outputs/styles.css"
+    },
+    {
+      "source": "/script.js",
+      "destination": "/outputs/script.js"
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/outputs/robots.txt"
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/outputs/sitemap.xml"
+    },
+    {
+      "source": "/dr-gutto-vilhena-apresentacao-site.pdf",
+      "destination": "/outputs/dr-gutto-vilhena-apresentacao-site.pdf"
+    },
+    {
+      "source": "/site-dr-gutto-offline.zip",
+      "destination": "/outputs/site-dr-gutto-offline.zip"
+    },
+    {
+      "source": "/roteiro-apresentacao.txt",
+      "destination": "/outputs/roteiro-apresentacao.txt"
+    },
+    {
+      "source": "/guia-google-perfil-empresa.txt",
+      "destination": "/outputs/guia-google-perfil-empresa.txt"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/outputs/index.html"
+    }
+  ]
+}

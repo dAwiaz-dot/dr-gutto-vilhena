@@ -20,8 +20,13 @@ PDF_PATH = OUTPUTS / "dr-gutto-vilhena-apresentacao-site.pdf"
 
 INSTAGRAM_URL = "https://www.instagram.com/dr.guttovilhena/"
 WHATSAPP_URL = "https://wa.me/5535991338862"
-SITE_URL = "https://dr-gutto-vilhena.vercel.app/"
+SITE_URL = "https://www.drguttovilhena.com.br/"
+MAPS_URL = "https://maps.app.goo.gl/GqoGFmA3ZqCaj3mr6"
 PHONE_DISPLAY = "+55 35 99133-8862"
+EMAIL_DISPLAY = "guttodentista@outlook.com"
+EMAIL_URL = f"mailto:{EMAIL_DISPLAY}"
+ADDRESS_DISPLAY = "Rua Martins Alfenas, 1918 - Centro, Alfenas-MG"
+HOURS_DISPLAY = "Seg. a sex., 8h30 às 19h | Sáb., 9h às 12h"
 
 PAGE_W, PAGE_H = landscape(A4)
 
@@ -139,7 +144,7 @@ def button(c, label, x, y, w, h, fill=TEAL_DARK, text_color=PAPER, link=None):
         c.linkURL(link, (x, y, x + w, y + h), relative=0)
 
 
-def footer(c, page, label="dr-gutto-vilhena.vercel.app"):
+def footer(c, page, label="www.drguttovilhena.com.br"):
     c.setStrokeColor(LINE)
     c.line(44, 34, PAGE_W - 44, 34)
     c.setFillColor(MUTED)
@@ -178,7 +183,7 @@ def page_cover(c, hero):
     c.drawString(102, PAGE_H - 90, "Cirurgião Dentista | CRO 64064-MG")
 
     x = 58
-    draw_label(c, "proposta visual do site", x, PAGE_H - 170)
+    draw_label(c, "site profissional", x, PAGE_H - 170)
     draw_title(c, "Dr. Gutto Jordão Vilhena", x, PAGE_H - 208, 410, font_size=43, leading=46)
     paragraph(
         c,
@@ -207,7 +212,7 @@ def page_home_preview(c, hero):
     draw_title(c, "A página inicial em formato de site", 44, PAGE_H - 98, 470, font_size=31, leading=35)
     paragraph(
         c,
-        "O primeiro contato destaca nome, especialidades e registro profissional, com botões diretos para avaliação e tratamentos.",
+        "O primeiro contato destaca nome, áreas de atendimento e registro profissional, com botões diretos para avaliação e tratamentos.",
         44,
         PAGE_H - 176,
         420,
@@ -225,7 +230,7 @@ def page_home_preview(c, hero):
     c.drawString(browser_x + 86, browser_y + browser_h - 26, "Dr. Gutto Vilhena")
     c.setFillColor(MUTED)
     c.setFont("Helvetica", 9)
-    c.drawRightString(browser_x + browser_w - 24, browser_y + browser_h - 26, "Especialidades    Abordagem    Contato")
+    c.drawRightString(browser_x + browser_w - 24, browser_y + browser_h - 26, "Atendimentos    Abordagem    Contato")
 
     inner_x, inner_y = browser_x, browser_y
     inner_w, inner_h = browser_w, browser_h - 42
@@ -273,7 +278,7 @@ def page_services(c):
     c.setFillColor(PAPER)
     c.rect(0, 0, PAGE_W, PAGE_H, fill=1, stroke=0)
     draw_label(c, "conteúdo do site", 44, PAGE_H - 66)
-    draw_title(c, "Especialidades e jornada do paciente", 44, PAGE_H - 98, 720, font_size=31, leading=35)
+    draw_title(c, "Atendimentos e jornada do paciente", 44, PAGE_H - 98, 720, font_size=31, leading=35)
 
     cards = [
         ("Implantes dentários", "Planejamento para reabilitação oral com atenção a diagnóstico, previsibilidade e orientação sobre cada etapa do tratamento."),
@@ -320,18 +325,18 @@ def page_services(c):
 def page_contact(c):
     c.setFillColor(SOFT)
     c.rect(0, 0, PAGE_W, PAGE_H, fill=1, stroke=0)
-    draw_label(c, "apresentação para o cliente", 44, PAGE_H - 66)
-    draw_title(c, "Contato direto e próximos ajustes", 44, PAGE_H - 98, 510, font_size=32, leading=36)
+    draw_label(c, "dados oficiais", 44, PAGE_H - 66)
+    draw_title(c, "Contato direto e dados do consultório", 44, PAGE_H - 98, 560, font_size=32, leading=36)
     paragraph(
         c,
-        "O WhatsApp já está integrado ao site como contato principal. A proposta está pronta para validação visual e de conteúdo.",
+        "A versão atual já mostra WhatsApp, telefone, e-mail, endereço, rota no Google Maps e horários de funcionamento para facilitar o agendamento.",
         44,
         PAGE_H - 174,
         485,
         BODY,
     )
 
-    rounded_rect(c, 44, 224, 330, 146, PAPER, stroke=LINE, radius=8)
+    rounded_rect(c, 44, 184, 330, 186, PAPER, stroke=LINE, radius=8)
     draw_image(c, ASSETS / "dr-gutto-profile.jpg", 70, 302, 50, 50)
     c.setFillColor(INK)
     c.setFont("Helvetica-Bold", 16)
@@ -339,11 +344,16 @@ def page_contact(c):
     c.setFillColor(MUTED)
     c.setFont("Helvetica", 11)
     c.drawString(140, 314, "WhatsApp do consultório")
-    button(c, "Iniciar conversa", 70, 249, 130, 34, link=WHATSAPP_URL)
+    button(c, "Iniciar conversa", 70, 262, 130, 34, link=WHATSAPP_URL)
     c.setFillColor(MUTED)
-    c.setFont("Helvetica", 8.5)
-    c.drawString(216, 261, "Instagram: @dr.guttovilhena")
-    c.linkURL(INSTAGRAM_URL, (216, 254, 353, 268), relative=0)
+    c.setFont("Helvetica", 9)
+    c.drawString(216, 274, "Instagram: @dr.guttovilhena")
+    c.linkURL(INSTAGRAM_URL, (216, 267, 353, 282), relative=0)
+    c.setFont("Helvetica-Bold", 10)
+    c.drawString(70, 232, EMAIL_DISPLAY)
+    c.linkURL(EMAIL_URL, (70, 226, 244, 240), relative=0)
+    c.setFont("Helvetica", 9)
+    c.drawString(70, 211, HOURS_DISPLAY)
 
     rounded_rect(c, 414, 172, 158, 198, PAPER, stroke=LINE, radius=8)
     draw_qr(c, WHATSAPP_URL, 440, 212, 106)
@@ -354,13 +364,13 @@ def page_contact(c):
     rounded_rect(c, 604, 136, 194, 234, PAPER, stroke=LINE, radius=8)
     c.setFillColor(INK)
     c.setFont("Helvetica-Bold", 15)
-    c.drawString(626, 334, "Para a versão definitiva")
+    c.drawString(626, 334, "Próximos ajustes")
     checklist = [
-        "Endereço do consultório",
         "Fotos reais do espaço",
-        "Horários de atendimento",
-        "Logo ou assinatura visual",
-        "Revisão final com o profissional",
+        "Logo final aprovado",
+        "Perfil da Empresa no Google",
+        "Search Console",
+        "Revisão final do profissional",
     ]
     y = 302
     for item in checklist:
@@ -371,10 +381,14 @@ def page_contact(c):
         c.drawString(648, y, item)
         y -= 28
 
-    rounded_rect(c, 44, 66, PAGE_W - 88, 46, TEAL_DARK, radius=8)
+    rounded_rect(c, 44, 66, PAGE_W - 88, 72, TEAL_DARK, radius=8)
     c.setFillColor(PAPER)
-    c.setFont("Helvetica-Bold", 12)
-    c.drawString(66, 84, "Informações públicas usadas: Dr. Gutto Jordão Vilhena, Cirurgião Dentista, Implantes Dentários, Ortodontia, CRO 64064-MG.")
+    c.setFont("Helvetica-Bold", 11.5)
+    c.drawString(66, 112, ADDRESS_DISPLAY)
+    c.linkURL(MAPS_URL, (66, 106, 360, 122), relative=0)
+    c.setFont("Helvetica", 10)
+    c.drawString(66, 91, "Rota no Google Maps integrada ao site")
+    c.drawRightString(PAGE_W - 66, 91, "CRO-MG 64.064")
     footer(c, 4)
 
 

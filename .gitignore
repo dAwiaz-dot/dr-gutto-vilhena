@@ -14,3 +14,5 @@ tmp/
 *.tmp
 dados/*
 !dados/README.md
+.vercel
+.env*
