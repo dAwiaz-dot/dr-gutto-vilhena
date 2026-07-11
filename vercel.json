@@ -1,6 +1,14 @@
 {
   "rewrites": [
     {
+      "source": "/",
+      "destination": "/outputs/index.html"
+    },
+    {
+      "source": "/index.html",
+      "destination": "/outputs/index.html"
+    },
+    {
       "source": "/privacidade",
       "destination": "/outputs/privacidade.html"
     },
@@ -46,7 +54,7 @@
     },
     {
       "source": "/(.*)",
-      "destination": "/outputs/index.html"
+      "destination": "/outputs/404.html"
     }
   ]
 }
