@@ -1443,13 +1443,33 @@ p {
   height: 16px;
 }
 
+.footer-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 4px;
+  padding: 18px clamp(20px, 5vw, 72px) 0;
+}
+
+.footer-keywords span {
+  color: var(--muted-dark);
+  font-size: 0.74rem;
+  font-weight: 620;
+  cursor: default;
+}
+
+.footer-keywords span:not(:last-child)::after {
+  content: "•";
+  margin-left: 10px;
+  color: var(--line-dark);
+}
+
 .footer-bottom {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 22px clamp(20px, 5vw, 72px);
+  padding: 18px clamp(20px, 5vw, 72px) 22px;
 }
 
 .footer-bottom p {
