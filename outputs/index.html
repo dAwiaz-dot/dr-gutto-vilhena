@@ -6,7 +6,7 @@
     <title>Dr. Gutto Jordão Vilhena | Dentista em Alfenas-MG</title>
     <meta
       name="description"
-      content="Dr. Gutto Jordão Vilhena, cirurgião-dentista em Alfenas-MG. CRO-MG 64.064. Implantes dentários, ortodontia e clínica geral. Agende pelo WhatsApp."
+      content="Dr. Gutto Jordão Vilhena, cirurgião-dentista em Alfenas-MG. CRO-MG 64.064. Implantes dentários, ortodontia e clínica geral, com planejamento individual. Agende pelo WhatsApp."
     />
     <meta name="robots" content="index, follow" />
     <meta property="og:title" content="Dr. Gutto Jordão Vilhena" />
@@ -35,9 +35,8 @@
     <meta name="theme-color" content="#171817" />
     <link rel="canonical" href="https://www.drguttovilhena.com.br/" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-    <link rel="preload" href="assets/dental-clinic-hero.png" as="image" />
-    <link rel="preload" href="assets/logo-dr-gutto-provisoria.png" as="image" />
-    <link rel="stylesheet" href="styles.css?v=20260707-domain-seo-1" />
+    <link rel="preload" href="assets/dental-clinic-hero.webp" as="image" type="image/webp" />
+    <link rel="stylesheet" href="styles.css?v=20260710-premium-redesign-1" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -95,18 +94,34 @@
           },
           {
             "@type": "Question",
-            "name": "Onde fica o consultório?",
+            "name": "Dói colocar um implante dentário?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "O atendimento acontece na Rua Martins Alfenas, 1918, Centro, Alfenas-MG, CEP 37132-032."
+              "text": "O procedimento é realizado com anestesia local e o desconforto costuma ser controlado durante o atendimento. As sensações no pós-operatório variam de pessoa para pessoa e são explicadas durante o planejamento."
             }
           },
           {
             "@type": "Question",
-            "name": "Quais áreas odontológicas são atendidas?",
+            "name": "Quanto tempo demora o tratamento com implantes?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "O site apresenta atendimento em implantodontia, ortodontia, clínica geral e avaliação odontológica."
+              "text": "O tempo varia de acordo com o caso, o tipo de implante indicado e a condição óssea de cada paciente. Esses prazos são explicados durante a avaliação e o planejamento."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Qual é o valor do tratamento?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "O valor depende do plano definido após a avaliação clínica, já que cada caso tem necessidades diferentes. Os valores são apresentados com transparência durante o planejamento."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Existe parcelamento?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sim, o consultório oferece opções de parcelamento. As condições são combinadas durante a avaliação, de acordo com o tratamento indicado para o seu caso."
             }
           },
           {
@@ -115,6 +130,14 @@
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "A indicação de implantes depende de avaliação clínica, exames e planejamento individual. O primeiro passo é uma conversa com o cirurgião-dentista."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Onde fica o consultório?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "O atendimento acontece na Rua Martins Alfenas, 1918, Centro, Alfenas-MG, CEP 37132-032."
             }
           },
           {
@@ -134,11 +157,16 @@
 
     <header class="site-header" data-header>
       <a class="brand" href="#inicio" aria-label="Dr. Gutto Jordão Vilhena - início">
-        <img
-          class="brand-logo"
-          src="assets/logo-dr-gutto-provisoria.png"
-          alt="Dr. Gutto Jordão Vilhena"
-        />
+        <picture>
+          <source srcset="assets/logo-dr-gutto-provisoria.webp" type="image/webp" />
+          <img
+            class="brand-logo"
+            src="assets/logo-dr-gutto-provisoria.png"
+            alt="Dr. Gutto Jordão Vilhena"
+            width="206"
+            height="78"
+          />
+        </picture>
       </a>
 
       <button
@@ -154,10 +182,11 @@
       </button>
 
       <nav class="site-nav" id="site-nav" aria-label="Navegação principal">
-        <a href="#implantes">Implantes</a>
-        <a href="#especialidades">Atendimentos</a>
-        <a href="#duvidas">Dúvidas</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#tratamentos">Tratamentos</a>
         <a href="#abordagem">Como funciona</a>
+        <a href="#duvidas">Dúvidas</a>
         <a href="#contato">Contato</a>
         <a
           class="nav-action"
@@ -173,10 +202,11 @@
     <main id="conteudo">
       <section class="hero" id="inicio" aria-labelledby="hero-title">
         <div class="hero-inner">
-          <div class="hero-content">
+          <div class="hero-content" data-reveal>
             <p class="eyebrow">Implantodontia • Ortodontia • Clínica geral</p>
             <h1 id="hero-title">
-              Cuidado para voltar a <em>sorrir</em> e mastigar com confiança.
+              Especialista em implantes dentários, para você voltar a <em>sorrir</em> e mastigar
+              com confiança.
             </h1>
             <p class="hero-copy">
               Atendimento odontológico individual, com explicações claras e planejamento para
@@ -196,33 +226,45 @@
                 </svg>
                 Agendar avaliação
               </a>
-              <a class="button button-outline" href="#implantes">
-                Entender os implantes
+              <a
+                class="button button-outline"
+                href="https://wa.me/5535991338862?text=Ol%C3%A1%2C%20Dr.%20Gutto%21%20Tenho%20uma%20d%C3%BAvida%20e%20gostaria%20de%20conversar."
+                target="_blank"
+                rel="noreferrer"
+              >
+                Falar no WhatsApp
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="m9 18 6-6-6-6" />
                 </svg>
               </a>
             </div>
 
-            <dl class="credential-list" aria-label="Credenciais profissionais">
-              <div>
-                <dt>Registro profissional</dt>
-                <dd>CRO-MG 64.064</dd>
-              </div>
-              <div>
-                <dt>Área de atuação</dt>
-                <dd>Implantes dentários</dd>
-              </div>
-              <div>
-                <dt>Atendimento</dt>
-                <dd>Alfenas-MG</dd>
-              </div>
-            </dl>
+            <ul class="hero-indicators" aria-label="Diferenciais rápidos">
+              <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7" /></svg>
+                Especialista em Implantes
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7" /></svg>
+                CRO-MG 64.064
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7" /></svg>
+                Atendimento Humanizado
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7" /></svg>
+                Planejamento Individual
+              </li>
+            </ul>
           </div>
 
-          <aside class="hero-card" aria-label="Perfil profissional">
+          <aside class="hero-card" aria-label="Perfil profissional" data-reveal style="--delay: 120ms">
             <div class="profile-row">
-              <img src="assets/dr-gutto-profile.jpg" alt="Dr. Gutto Jordão Vilhena" />
+              <picture>
+                <source srcset="assets/dr-gutto-profile.webp" type="image/webp" />
+                <img src="assets/dr-gutto-profile.jpg" alt="Dr. Gutto Jordão Vilhena" width="58" height="58" />
+              </picture>
               <div>
                 <span>Cirurgião-dentista</span>
                 <strong>Dr. Gutto Jordão Vilhena</strong>
@@ -231,7 +273,7 @@
             <p>
               Atuação em implantodontia e ortodontia, com atendimento também em clínica geral.
             </p>
-            <a href="#profissional">Conheça a abordagem</a>
+            <a href="#sobre">Conheça a abordagem</a>
           </aside>
         </div>
       </section>
@@ -246,96 +288,148 @@
         </div>
       </section>
 
-      <section class="section implant-section" id="implantes" aria-labelledby="implantes-title">
-        <div class="implant-heading">
-          <div>
-            <p class="section-kicker">Implantes dentários</p>
-            <h2 id="implantes-title">Um tratamento começa por entender o seu caso.</h2>
+      <section class="section professional-section" id="sobre" aria-labelledby="sobre-title">
+        <div class="professional-card">
+          <div class="professional-photo" data-reveal>
+            <picture>
+              <source srcset="assets/dr-gutto-profile.webp" type="image/webp" />
+              <img src="assets/dr-gutto-profile.jpg" alt="Retrato de Dr. Gutto Jordão Vilhena" width="112" height="112" loading="lazy" />
+            </picture>
           </div>
-          <p class="section-intro">
-            O implante pode ser uma possibilidade para substituir dentes perdidos. A indicação
-            depende de avaliação clínica, exames e uma conversa transparente sobre etapas,
-            cuidados e alternativas.
-          </p>
-        </div>
-
-        <div class="implant-grid">
-          <article class="implant-feature">
-            <span class="feature-number">01</span>
-            <div>
-              <h3>Perdeu um ou mais dentes?</h3>
-              <p>
-                A avaliação ajuda a compreender quais caminhos podem ser considerados para
-                recuperar função e conforto.
-              </p>
+          <div class="professional-copy" data-reveal style="--delay: 100ms">
+            <p class="section-kicker">O profissional</p>
+            <h2 id="sobre-title">Dr. Gutto Jordão Vilhena</h2>
+            <p class="professional-lead">
+              Cirurgião-dentista com atuação em implantodontia e ortodontia.
+            </p>
+            <p>
+              O atendimento é conduzido com planejamento, linguagem simples e atenção às
+              particularidades de cada paciente, especialmente para quem chega com dúvidas,
+              receios ou uma história longa com a saúde bucal. O foco é sempre entender o caso
+              antes de indicar qualquer tratamento, respeitando o tempo de decisão de cada pessoa.
+            </p>
+            <div class="professional-credentials">
+              <span>CRO-MG 64.064</span>
+              <span>Implantodontia</span>
+              <span>Ortodontia</span>
+              <span>Clínica geral</span>
             </div>
-          </article>
-
-          <article class="implant-feature">
-            <span class="feature-number">02</span>
-            <div>
-              <h3>A prótese causa desconforto?</h3>
-              <p>
-                Cada situação exige análise individual para entender estabilidade, adaptação e
-                possibilidades de tratamento.
-              </p>
-            </div>
-          </article>
-
-          <article class="implant-feature">
-            <span class="feature-number">03</span>
-            <div>
-              <h3>Tem dificuldade ao mastigar?</h3>
-              <p>
-                Investigar a causa é o primeiro passo para construir um plano odontológico
-                adequado às suas necessidades.
-              </p>
-            </div>
-          </article>
-        </div>
-
-        <div class="implant-cta">
-          <p>Não é preciso decidir tudo antes da primeira conversa.</p>
-          <a
-            href="https://wa.me/5535991338862?text=Ol%C3%A1%2C%20Dr.%20Gutto%21%20Gostaria%20de%20conversar%20sobre%20implantes%20dent%C3%A1rios."
-            target="_blank"
-            rel="noreferrer"
-          >
-            Falar sobre implantes
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="m9 18 6-6-6-6" />
-            </svg>
-          </a>
+          </div>
         </div>
       </section>
 
-      <section
-        class="section specialties-section"
-        id="especialidades"
-        aria-labelledby="especialidades-title"
-      >
+      <section class="section differentials-section" id="diferenciais" aria-labelledby="diferenciais-title">
         <div class="section-heading">
-          <p class="section-kicker">Áreas de atendimento</p>
-          <h2 id="especialidades-title">Cuidado odontológico em diferentes momentos.</h2>
+          <div data-reveal>
+            <p class="section-kicker">Por que escolher esse acompanhamento</p>
+            <h2 id="diferenciais-title">Diferenciais pensados para o seu conforto.</h2>
+          </div>
+          <p class="section-intro" data-reveal style="--delay: 80ms">
+            Cada ponto abaixo reflete como o atendimento é conduzido no dia a dia do consultório —
+            sem promessas de resultado, com clareza sobre o que esperar em cada etapa.
+          </p>
         </div>
 
-        <div class="service-grid">
-          <article class="service-card service-card-primary">
-            <div class="service-icon">
+        <div class="differentials-grid">
+          <article class="differential-card" data-reveal style="--delay: 0ms">
+            <div class="differential-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="8" r="3.2" />
+                <path d="M5 20c1.5-4 4.2-6 7-6s5.5 2 7 6" />
+              </svg>
+            </div>
+            <h3>Atendimento individualizado</h3>
+            <p>Cada plano é pensado para o seu caso, sem soluções padronizadas.</p>
+          </article>
+
+          <article class="differential-card" data-reveal style="--delay: 60ms">
+            <div class="differential-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 6h16v10H9l-4 4V6Z" />
+              </svg>
+            </div>
+            <h3>Explicação em cada etapa</h3>
+            <p>Você entende o que será feito, por quê e quais são as alternativas, antes de decidir.</p>
+          </article>
+
+          <article class="differential-card" data-reveal style="--delay: 120ms">
+            <div class="differential-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8 4c2.2 0 2.4 1 4 1s1.8-1 4-1c2.4 0 4 1.9 4 4.5 0 3.5-1.9 5.2-2.7 8.1-.5 1.7-.9 3.4-2.5 3.4-1.3 0-1.4-1.3-1.8-2.8-.3-1.1-.5-2.2-1-2.2s-.7 1.1-1 2.2c-.4 1.5-.5 2.8-1.8 2.8-1.6 0-2-1.7-2.5-3.4C5.9 13.7 4 12 4 8.5 4 5.9 5.6 4 8 4Z" />
+              </svg>
+            </div>
+            <h3>Especialização em implantes</h3>
+            <p>Foco dedicado a devolver função e conforto para quem perdeu dentes.</p>
+          </article>
+
+          <article class="differential-card" data-reveal style="--delay: 0ms">
+            <div class="differential-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="4" y="5" width="16" height="15" rx="2" />
+                <path d="M4 10h16M8 3v4M16 3v4" />
+              </svg>
+            </div>
+            <h3>Acompanhamento contínuo</h3>
+            <p>Retornos e orientações após o tratamento, para acompanhar sua evolução.</p>
+          </article>
+
+          <article class="differential-card" data-reveal style="--delay: 60ms">
+            <div class="differential-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 11 12 4l8 7" />
+                <path d="M6 10v9h12v-9" />
+              </svg>
+            </div>
+            <h3>Ambiente cuidado</h3>
+            <p>Estrutura pensada para o seu conforto, do agendamento ao atendimento.</p>
+          </article>
+
+          <article class="differential-card" data-reveal style="--delay: 120ms">
+            <div class="differential-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="8.5" />
+                <path d="M12 7v5l3.5 2" />
+              </svg>
+            </div>
+            <h3>Decisão sem pressa</h3>
+            <p>Tempo para tirar dúvidas e se sentir seguro antes de qualquer procedimento.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section treatments-section" id="tratamentos" aria-labelledby="tratamentos-title">
+        <div class="section-heading">
+          <div data-reveal>
+            <p class="section-kicker">Áreas de atendimento</p>
+            <h2 id="tratamentos-title">Tratamentos conduzidos com planejamento.</h2>
+          </div>
+          <p class="section-intro" data-reveal style="--delay: 80ms">
+            Três frentes de atuação, sempre com avaliação individual antes de qualquer indicação.
+            Toque em cada card para entender melhor.
+          </p>
+        </div>
+
+        <div class="treatment-grid">
+          <article class="treatment-card" data-reveal style="--delay: 0ms">
+            <div class="treatment-icon">
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M8 4c2.2 0 2.4 1 4 1s1.8-1 4-1c2.4 0 4 1.9 4 4.5 0 3.5-1.9 5.2-2.7 8.1-.5 1.7-.9 3.4-2.5 3.4-1.3 0-1.4-1.3-1.8-2.8-.3-1.1-.5-2.2-1-2.2s-.7 1.1-1 2.2c-.4 1.5-.5 2.8-1.8 2.8-1.6 0-2-1.7-2.5-3.4C5.9 13.7 4 12 4 8.5 4 5.9 5.6 4 8 4Z" />
               </svg>
             </div>
             <p class="card-label">Foco de atendimento</p>
-            <h3>Implantodontia</h3>
+            <h3>Implantes Dentários</h3>
             <p>
               Planejamento para reposição de dentes, considerando diagnóstico, estrutura óssea,
               saúde bucal e necessidades individuais.
             </p>
+            <button class="treatment-more" type="button" data-open-modal="implantes">
+              Saiba mais
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+            </button>
           </article>
 
-          <article class="service-card">
-            <div class="service-icon">
+          <article class="treatment-card" data-reveal style="--delay: 80ms">
+            <div class="treatment-icon">
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M5 9c1.9-2 4.2-3 7-3s5.1 1 7 3" />
                 <path d="M5 15c1.9 2 4.2 3 7 3s5.1-1 7-3" />
@@ -348,60 +442,194 @@
               Avaliação da posição dos dentes e da mordida para definir um tratamento compatível
               com cada fase da vida.
             </p>
+            <button class="treatment-more" type="button" data-open-modal="ortodontia">
+              Saiba mais
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+            </button>
           </article>
 
-          <article class="service-card">
-            <div class="service-icon">
+          <article class="treatment-card" data-reveal style="--delay: 160ms">
+            <div class="treatment-icon">
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M8 7h8M8 12h8M8 17h5" />
                 <rect x="5" y="3" width="14" height="18" rx="2" />
               </svg>
             </div>
             <p class="card-label">Prevenção e cuidado</p>
-            <h3>Clínica geral</h3>
+            <h3>Clínica Geral</h3>
             <p>
               Avaliação odontológica, prevenção e acompanhamento da saúde bucal com orientações
               claras para cada necessidade.
             </p>
+            <button class="treatment-more" type="button" data-open-modal="clinica-geral">
+              Saiba mais
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+            </button>
           </article>
         </div>
       </section>
 
+      <div class="modal-overlay" data-modal-overlay hidden>
+        <div
+          class="modal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-title-implantes"
+          data-modal-panel="implantes"
+          hidden
+        >
+          <button class="modal-close" type="button" data-modal-close aria-label="Fechar">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>
+          </button>
+          <p class="section-kicker">Implantes dentários</p>
+          <h3 id="modal-title-implantes">Um tratamento começa por entender o seu caso.</h3>
+          <p class="modal-lead">
+            O implante pode ser uma possibilidade para substituir dentes perdidos. A indicação
+            depende de avaliação clínica, exames e uma conversa transparente sobre etapas,
+            cuidados e alternativas.
+          </p>
+          <div class="modal-points">
+            <div>
+              <h4>Perdeu um ou mais dentes?</h4>
+              <p>A avaliação ajuda a compreender quais caminhos podem ser considerados para recuperar função e conforto.</p>
+            </div>
+            <div>
+              <h4>A prótese causa desconforto?</h4>
+              <p>Cada situação exige análise individual para entender estabilidade, adaptação e possibilidades de tratamento.</p>
+            </div>
+            <div>
+              <h4>Tem dificuldade ao mastigar?</h4>
+              <p>Investigar a causa é o primeiro passo para construir um plano odontológico adequado às suas necessidades.</p>
+            </div>
+          </div>
+          <a
+            class="button button-gold"
+            href="https://wa.me/5535991338862?text=Ol%C3%A1%2C%20Dr.%20Gutto%21%20Gostaria%20de%20conversar%20sobre%20implantes%20dent%C3%A1rios."
+            target="_blank"
+            rel="noreferrer"
+          >
+            Falar sobre implantes
+          </a>
+        </div>
+
+        <div
+          class="modal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-title-ortodontia"
+          data-modal-panel="ortodontia"
+          hidden
+        >
+          <button class="modal-close" type="button" data-modal-close aria-label="Fechar">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>
+          </button>
+          <p class="section-kicker">Ortodontia</p>
+          <h3 id="modal-title-ortodontia">Um plano de alinhamento pensado para a sua fase de vida.</h3>
+          <p class="modal-lead">
+            O tratamento ortodôntico começa por entender como os dentes e a mordida se relacionam
+            hoje, antes de indicar a abordagem mais adequada para o seu caso.
+          </p>
+          <div class="modal-points">
+            <div>
+              <h4>Avaliação inicial</h4>
+              <p>Exame da posição dos dentes, da mordida e do histórico odontológico.</p>
+            </div>
+            <div>
+              <h4>Plano individual</h4>
+              <p>Cada tratamento é definido conforme a fase da vida e a necessidade do paciente.</p>
+            </div>
+            <div>
+              <h4>Acompanhamento</h4>
+              <p>Retornos periódicos para ajustar o tratamento e acompanhar a evolução.</p>
+            </div>
+          </div>
+          <a
+            class="button button-gold"
+            href="https://wa.me/5535991338862?text=Ol%C3%A1%2C%20Dr.%20Gutto%21%20Gostaria%20de%20conversar%20sobre%20ortodontia."
+            target="_blank"
+            rel="noreferrer"
+          >
+            Falar sobre ortodontia
+          </a>
+        </div>
+
+        <div
+          class="modal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-title-clinica-geral"
+          data-modal-panel="clinica-geral"
+          hidden
+        >
+          <button class="modal-close" type="button" data-modal-close aria-label="Fechar">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>
+          </button>
+          <p class="section-kicker">Clínica geral</p>
+          <h3 id="modal-title-clinica-geral">A base do cuidado com a sua saúde bucal.</h3>
+          <p class="modal-lead">
+            A clínica geral cobre a prevenção e a identificação precoce de problemas, com
+            orientação clara sobre os próximos passos, quando necessários.
+          </p>
+          <div class="modal-points">
+            <div>
+              <h4>Avaliação odontológica</h4>
+              <p>Exame clínico completo para identificar necessidades e prioridades.</p>
+            </div>
+            <div>
+              <h4>Prevenção</h4>
+              <p>Orientações para reduzir riscos e manter a saúde bucal em dia.</p>
+            </div>
+            <div>
+              <h4>Encaminhamento</h4>
+              <p>Quando necessário, indicação para tratamentos mais específicos, como implantes ou ortodontia.</p>
+            </div>
+          </div>
+          <a
+            class="button button-gold"
+            href="https://wa.me/5535991338862?text=Ol%C3%A1%2C%20Dr.%20Gutto%21%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20rotina."
+            target="_blank"
+            rel="noreferrer"
+          >
+            Agendar avaliação de rotina
+          </a>
+        </div>
+      </div>
+
       <section class="section process-section" id="abordagem" aria-labelledby="abordagem-title">
         <div class="process-header">
-          <div>
+          <div data-reveal>
             <p class="section-kicker section-kicker-light">Como funciona</p>
             <h2 id="abordagem-title">Uma jornada clara, do primeiro contato ao acompanhamento.</h2>
           </div>
-          <p>
+          <p data-reveal style="--delay: 80ms">
             Sem pressa para decidir e sem respostas prontas. Cada etapa existe para que você
             entenda o tratamento e participe das escolhas.
           </p>
         </div>
 
-        <ol class="process-list">
-          <li>
+        <ol class="process-list" data-timeline>
+          <li data-reveal style="--delay: 0ms">
             <span>01</span>
             <div>
               <h3>Conversa e avaliação</h3>
               <p>Escuta das necessidades, histórico de saúde e exame clínico inicial.</p>
             </div>
           </li>
-          <li>
+          <li data-reveal style="--delay: 90ms">
             <span>02</span>
             <div>
               <h3>Diagnóstico e planejamento</h3>
               <p>Análise do caso, dos exames necessários e das possibilidades de cuidado.</p>
             </div>
           </li>
-          <li>
+          <li data-reveal style="--delay: 180ms">
             <span>03</span>
             <div>
               <h3>Tratamento explicado</h3>
               <p>Orientações sobre etapas, limites, cuidados e expectativas para o seu caso.</p>
             </div>
           </li>
-          <li>
+          <li data-reveal style="--delay: 270ms">
             <span>04</span>
             <div>
               <h3>Acompanhamento</h3>
@@ -411,34 +639,9 @@
         </ol>
       </section>
 
-      <section class="section professional-section" id="profissional" aria-labelledby="professional-title">
-        <div class="professional-card">
-          <div class="professional-photo">
-            <img src="assets/dr-gutto-profile.jpg" alt="Retrato de Dr. Gutto Jordão Vilhena" />
-          </div>
-          <div class="professional-copy">
-            <p class="section-kicker">O profissional</p>
-            <h2 id="professional-title">Dr. Gutto Jordão Vilhena</h2>
-            <p class="professional-lead">
-              Cirurgião-dentista com atuação em implantodontia e ortodontia.
-            </p>
-            <p>
-              O atendimento é conduzido com planejamento, linguagem simples e atenção às
-              particularidades de cada paciente, especialmente para quem chega com dúvidas,
-              receios ou uma história longa com a saúde bucal.
-            </p>
-            <div class="professional-credentials">
-              <span>CRO-MG 64.064</span>
-              <span>Implantodontia</span>
-              <span>Ortodontia</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section class="section local-section" id="alfenas" aria-labelledby="alfenas-title">
         <div class="local-inner">
-          <div class="local-copy">
+          <div class="local-copy" data-reveal>
             <p class="section-kicker">Atendimento em Alfenas</p>
             <h2 id="alfenas-title">Dentista em Alfenas-MG, com endereço no Centro.</h2>
             <p>
@@ -446,6 +649,12 @@
               1918, em Alfenas-MG. O site reúne as informações principais para quem
               procura atendimento odontológico na cidade e deseja iniciar o contato com clareza.
             </p>
+            <div class="local-photo">
+              <picture>
+                <source srcset="assets/dr-gutto-recepcao.webp" type="image/webp" />
+                <img src="assets/dr-gutto-recepcao.jpg" alt="Recepção do consultório do Dr. Gutto Jordão Vilhena em Alfenas-MG" loading="lazy" width="1050" height="700" />
+              </picture>
+            </div>
             <a
               class="local-map-link"
               href="https://maps.app.goo.gl/GqoGFmA3ZqCaj3mr6"
@@ -458,7 +667,7 @@
               </svg>
             </a>
           </div>
-          <div class="local-service-list" aria-label="Buscas locais relacionadas">
+          <div class="local-service-list" aria-label="Buscas locais relacionadas" data-reveal style="--delay: 100ms">
             <article>
               <span>01</span>
               <div>
@@ -486,11 +695,11 @@
 
       <section class="section faq-section" id="duvidas" aria-labelledby="duvidas-title">
         <div class="faq-inner">
-          <div class="faq-heading">
+          <div class="faq-heading" data-reveal>
             <p class="section-kicker">Dúvidas frequentes</p>
             <h2 id="duvidas-title">Perguntas comuns antes da primeira conversa.</h2>
           </div>
-          <div class="faq-list">
+          <div class="faq-list" data-reveal style="--delay: 80ms">
             <details>
               <summary>Como faço para agendar uma avaliação?</summary>
               <p>
@@ -499,10 +708,33 @@
               </p>
             </details>
             <details>
-              <summary>O consultório atende em qual endereço?</summary>
+              <summary>Dói colocar um implante dentário?</summary>
               <p>
-                O atendimento acontece na Rua Martins Alfenas, 1918, Centro, Alfenas-MG,
-                CEP 37132-032. O site também oferece um botão direto para abrir a rota.
+                O procedimento é realizado com anestesia local e o desconforto costuma ser
+                controlado durante o atendimento. As sensações no pós-operatório variam de pessoa
+                para pessoa e são explicadas durante o planejamento.
+              </p>
+            </details>
+            <details>
+              <summary>Quanto tempo demora o tratamento com implantes?</summary>
+              <p>
+                O tempo varia de acordo com o caso, o tipo de implante indicado e a condição óssea
+                de cada paciente. Esses prazos são explicados durante a avaliação e o planejamento.
+              </p>
+            </details>
+            <details>
+              <summary>Qual é o valor do tratamento?</summary>
+              <p>
+                O valor depende do plano definido após a avaliação clínica, já que cada caso tem
+                necessidades diferentes. Os valores são apresentados com transparência durante o
+                planejamento.
+              </p>
+            </details>
+            <details>
+              <summary>Existe parcelamento?</summary>
+              <p>
+                Sim, o consultório oferece opções de parcelamento. As condições são combinadas
+                durante a avaliação, de acordo com o tratamento indicado para o seu caso.
               </p>
             </details>
             <details>
@@ -513,17 +745,10 @@
               </p>
             </details>
             <details>
-              <summary>Preciso levar exames na primeira avaliação?</summary>
+              <summary>O consultório atende em qual endereço?</summary>
               <p>
-                Se você já tiver exames recentes, pode levar. Caso não tenha, o Dr. Gutto poderá
-                orientar quais exames fazem sentido após avaliar sua necessidade.
-              </p>
-            </details>
-            <details>
-              <summary>Quais áreas de atendimento aparecem no site?</summary>
-              <p>
-                O site apresenta implantodontia, ortodontia, clínica geral e avaliação odontológica,
-                sempre com planejamento individual e explicação das etapas.
+                O atendimento acontece na Rua Martins Alfenas, 1918, Centro, Alfenas-MG,
+                CEP 37132-032. O site também oferece um botão direto para abrir a rota.
               </p>
             </details>
             <details>
@@ -536,18 +761,15 @@
         </div>
       </section>
 
-      <section class="section contact-section" id="contato" aria-labelledby="contato-title">
-        <div class="contact-inner">
-          <div class="contact-copy">
+      <section class="section cta-final" id="contato" aria-labelledby="cta-final-title">
+        <div class="cta-final-inner">
+          <div class="cta-final-copy" data-reveal>
             <p class="section-kicker section-kicker-light">Primeiro passo</p>
-            <h2 id="contato-title">Converse com o Dr. Gutto.</h2>
+            <h2 id="cta-final-title">Dê o primeiro passo para recuperar seu sorriso.</h2>
             <p>
               Envie uma mensagem para solicitar uma avaliação. Você poderá explicar sua
-              necessidade e receber a orientação inicial para o agendamento.
+              necessidade e receber a orientação inicial para o agendamento — sem compromisso.
             </p>
-          </div>
-
-          <div class="contact-actions">
             <a
               class="button button-gold button-large"
               href="https://wa.me/5535991338862?text=Ol%C3%A1%2C%20Dr.%20Gutto%21%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o."
@@ -560,61 +782,140 @@
               </svg>
               Chamar no WhatsApp
             </a>
-            <a
-              class="contact-address"
-              href="https://maps.app.goo.gl/GqoGFmA3ZqCaj3mr6"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <span>Endereço do consultório</span>
-              <strong>Rua Martins Alfenas, 1918 - Centro, Alfenas - MG</strong>
-              <small>CEP 37132-032</small>
-            </a>
-            <div class="contact-info-grid" aria-label="Informações de atendimento">
-              <a class="contact-card" href="tel:+5535991338862">
-                <span>Telefone</span>
-                <strong>35 99133-8862</strong>
-              </a>
-              <a class="contact-card" href="mailto:guttodentista@outlook.com">
-                <span>E-mail</span>
-                <strong>guttodentista@outlook.com</strong>
-              </a>
-              <div class="contact-card">
-                <span>Horário</span>
-                <strong>Seg. a sex., 8h30 às 19h</strong>
-                <small>Sábado, 9h às 12h</small>
-              </div>
-            </div>
-            <a
-              class="contact-link"
-              href="https://www.instagram.com/dr.guttovilhena/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Acompanhar no Instagram
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="m9 18 6-6-6-6" />
-              </svg>
-            </a>
             <p class="contact-number">Atendimento pelo WhatsApp: +55 35 99133-8862</p>
           </div>
+
+          <form class="smart-form" data-smart-form novalidate aria-label="Formulário de contato rápido" data-reveal style="--delay: 120ms">
+            <p class="smart-form-kicker">Prefere que a gente chame você?</p>
+            <div class="form-field">
+              <label for="form-nome">Nome</label>
+              <input type="text" id="form-nome" name="nome" autocomplete="name" required />
+              <span class="form-error" data-error-for="nome"></span>
+            </div>
+            <div class="form-field">
+              <label for="form-telefone">WhatsApp</label>
+              <input
+                type="tel"
+                id="form-telefone"
+                name="telefone"
+                inputmode="numeric"
+                autocomplete="tel"
+                placeholder="(35) 99999-9999"
+                required
+                data-phone-mask
+              />
+              <span class="form-error" data-error-for="telefone"></span>
+            </div>
+            <div class="form-field">
+              <label for="form-motivo">Motivo do contato</label>
+              <select id="form-motivo" name="motivo" required>
+                <option value="" disabled selected>Selecione uma opção</option>
+                <option value="Implantes dentários">Implantes dentários</option>
+                <option value="Ortodontia">Ortodontia</option>
+                <option value="Avaliação geral / Clínica geral">Avaliação geral / Clínica geral</option>
+              </select>
+              <span class="form-error" data-error-for="motivo"></span>
+            </div>
+            <button class="button button-outline" type="submit">
+              Enviar pelo WhatsApp
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+            </button>
+            <p class="form-feedback" data-form-feedback role="status" aria-live="polite"></p>
+          </form>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="footer-brand">
-        <img src="assets/logo-dr-gutto-provisoria.png" alt="Dr. Gutto Jordão Vilhena" />
-        <p>Cirurgião-dentista • CRO-MG 64.064</p>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <picture>
+            <source srcset="assets/logo-dr-gutto-provisoria.webp" type="image/webp" />
+            <img src="assets/logo-dr-gutto-provisoria.png" alt="Dr. Gutto Jordão Vilhena" width="168" height="63" loading="lazy" />
+          </picture>
+          <p>Cirurgião-dentista • CRO-MG 64.064</p>
+          <div class="footer-social-links">
+            <a
+              class="footer-social-link"
+              href="https://www.instagram.com/dr.guttovilhena/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Acompanhar no Instagram
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+            </a>
+            <a
+              class="footer-social-link"
+              href="https://maps.app.goo.gl/GqoGFmA3ZqCaj3mr6"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Avaliar no Google
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-col-title">Contato</p>
+          <a href="tel:+5535991338862">35 99133-8862</a>
+          <a href="mailto:guttodentista@outlook.com">guttodentista@outlook.com</a>
+          <a
+            href="https://wa.me/5535991338862?text=Ol%C3%A1%2C%20Dr.%20Gutto%21%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o."
+            target="_blank"
+            rel="noreferrer"
+          >
+            Chamar no WhatsApp
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-col-title">Horário</p>
+          <p>Seg. a sex., 8h30 às 19h</p>
+          <p>Sábado, 9h às 12h</p>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-col-title">Navegação</p>
+          <a href="#sobre">Sobre</a>
+          <a href="#tratamentos">Tratamentos</a>
+          <a href="#duvidas">Dúvidas</a>
+          <a href="privacidade.html">Política de privacidade</a>
+        </div>
       </div>
-      <div class="footer-meta">
-        <p>Rua Martins Alfenas, 1918 • Alfenas-MG</p>
-        <p>guttodentista@outlook.com • 35 99133-8862</p>
-        <a href="privacidade.html">Política de privacidade</a>
+
+      <div class="footer-map">
+        <iframe
+          src="https://www.google.com/maps?q=Rua+Martins+Alfenas,+1918+-+Centro,+Alfenas+-+MG,+37132-032&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Localização do consultório do Dr. Gutto Jordão Vilhena em Alfenas-MG"
+        ></iframe>
+        <a class="footer-map-address" href="https://maps.app.goo.gl/GqoGFmA3ZqCaj3mr6" target="_blank" rel="noreferrer">
+          Rua Martins Alfenas, 1918 - Centro, Alfenas - MG, CEP 37132-032
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+        </a>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Dr. Gutto Jordão Vilhena — CRO-MG 64.064</p>
         <a href="#inicio">Voltar ao início</a>
       </div>
     </footer>
 
-    <script src="script.js?v=20260707-domain-seo-1"></script>
+    <a
+      class="whatsapp-float"
+      href="https://wa.me/5535991338862?text=Ol%C3%A1%2C%20Dr.%20Gutto%21%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o."
+      target="_blank"
+      rel="noreferrer"
+      aria-label="Conversar no WhatsApp"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z" />
+        <path d="M8.7 8.3c.4 3.2 2.1 4.9 5.3 5.3" />
+      </svg>
+    </a>
+
+    <script src="script.js?v=20260710-premium-redesign-1"></script>
   </body>
 </html>
