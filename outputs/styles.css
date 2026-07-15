@@ -1800,7 +1800,8 @@ p {
   }
 
   .hero h1 {
-    font-size: clamp(3.1rem, 15vw, 4.8rem);
+    font-size: clamp(2.75rem, 9vw, 3.75rem);
+    line-height: 1.08;
   }
 
   .hero-copy {
