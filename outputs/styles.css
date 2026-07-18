@@ -1732,9 +1732,10 @@ p {
   outline: none;
 }
 
-/* ---------- WhatsApp floating button ---------- */
+/* ---------- WhatsApp / Instagram floating buttons ---------- */
 
-.whatsapp-float {
+.whatsapp-float,
+.instagram-float {
   position: fixed;
   right: 20px;
   bottom: 20px;
@@ -1745,21 +1746,40 @@ p {
   height: 58px;
   color: var(--paper-bright);
   border-radius: 50%;
-  background: var(--whatsapp-green);
   box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
   transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 220ms ease;
 }
 
+.whatsapp-float {
+  background: var(--whatsapp-green);
+}
+
+.instagram-float {
+  bottom: 88px;
+  background: radial-gradient(circle at 30% 110%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+}
+
 .whatsapp-float:hover,
-.whatsapp-float:focus-visible {
+.whatsapp-float:focus-visible,
+.instagram-float:hover,
+.instagram-float:focus-visible {
   transform: translateY(-3px) scale(1.04);
   box-shadow: 0 20px 44px rgba(0, 0, 0, 0.34);
   outline: none;
 }
 
-.whatsapp-float svg {
+.whatsapp-float svg,
+.instagram-float svg {
   width: 28px;
   height: 28px;
+}
+
+.instagram-float svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 /* ---------- Privacy page (unchanged) ---------- */
@@ -2158,14 +2178,23 @@ p {
     align-items: flex-start;
   }
 
-  .whatsapp-float {
+  .whatsapp-float,
+  .instagram-float {
     right: 14px;
-    bottom: 14px;
     width: 52px;
     height: 52px;
   }
 
-  .whatsapp-float svg {
+  .whatsapp-float {
+    bottom: 14px;
+  }
+
+  .instagram-float {
+    bottom: 76px;
+  }
+
+  .whatsapp-float svg,
+  .instagram-float svg {
     width: 24px;
     height: 24px;
   }
