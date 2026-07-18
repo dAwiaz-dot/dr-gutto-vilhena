@@ -7,6 +7,7 @@
   --gold: #c5b52a;
   --gold-soft: #d7c95a;
   --gold-elegant: #ad9a55;
+  --gold-deep: #806a26;
   --silver: #c8cbc7;
   --paper: #f4f1e9;
   --paper-bright: #fbfaf6;
@@ -103,7 +104,12 @@ p {
 
 /* ---------- Reveal-on-scroll ---------- */
 
-[data-reveal] {
+/* Hidden-by-default states only apply once .js-reveal-ready is confirmed on
+   <html> (set synchronously by script.js). Without it — JS blocked, slow, or
+   the tab backgrounded before the observer fires — all reveal targets stay
+   at their normal, fully visible static state. Real content must never
+   depend on JS to become visible in the first place. */
+.js-reveal-ready [data-reveal] {
   opacity: 0;
   transform: translateY(26px);
   transition:
@@ -115,6 +121,76 @@ p {
 [data-reveal].is-visible {
   opacity: 1;
   transform: none;
+}
+
+/* Signature entrance for hero/high-emphasis blocks: a clip-path wipe instead of generic fade-up. */
+.js-reveal-ready [data-reveal="wipe"] {
+  opacity: 1;
+  transform: none;
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 450ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--delay, 0ms);
+}
+
+[data-reveal="wipe"].is-visible {
+  clip-path: inset(0 0 0% 0);
+}
+
+/* ---------- Rail (spine connecting hero -> diferenciais -> tratamentos -> como funciona) ---------- */
+
+.rail-marker {
+  /* Sits inside the section's own left padding gutter (min clamp(20px,5vw,72px),
+     ~39px+ once the marker becomes visible at 781px+) — always smaller than
+     that minimum so it never overlaps the content start. */
+  position: absolute;
+  top: 0;
+  left: clamp(8px, 1.6vw, 18px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  pointer-events: none;
+}
+
+.rail-dot {
+  flex: 0 0 auto;
+  width: 8px;
+  height: 8px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.rail-line {
+  width: 2px;
+  flex: 1 1 auto;
+  min-height: 60px;
+  background: currentColor;
+  opacity: 0.3;
+  transform-origin: top center;
+  transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.js-reveal-ready .rail-line {
+  transform: scaleY(0);
+}
+
+.rail-line.is-visible {
+  transform: scaleY(1);
+}
+
+.rail-marker--dark {
+  color: var(--gold-soft);
+}
+
+.rail-marker--light {
+  color: var(--gold-deep);
+}
+
+@media (max-width: 780px) {
+  .rail-marker {
+    display: none;
+  }
 }
 
 .skip-link {
@@ -291,12 +367,21 @@ p {
 .eyebrow,
 .section-kicker {
   margin-bottom: 18px;
-  color: var(--gold-elegant);
   font-size: 0.76rem;
   font-weight: 820;
   letter-spacing: 0.16em;
   line-height: 1.5;
   text-transform: uppercase;
+}
+
+.eyebrow {
+  /* Used only in the dark hero — gold-elegant keeps ~8:1 contrast there. */
+  color: var(--gold-elegant);
+}
+
+.section-kicker {
+  /* Used on light section backgrounds — gold-elegant fails WCAG AA (2.47:1) here. */
+  color: var(--gold-deep);
 }
 
 .hero h1 {
@@ -473,7 +558,7 @@ p {
 .hero-card > p {
   margin-bottom: 16px;
   color: rgba(244, 241, 233, 0.7);
-  font-size: 0.92rem;
+  font-size: 1rem;
   line-height: 1.65;
 }
 
@@ -549,7 +634,8 @@ p {
 .process-header h2,
 .local-copy h2,
 .faq-heading h2,
-.cta-final-copy h2 {
+.cta-final-copy h2,
+.display-heading {
   margin-bottom: 0;
   font-size: clamp(2.65rem, 4.65vw, 5.25rem);
   line-height: 0.98;
@@ -563,8 +649,9 @@ p {
 }
 
 .card-label {
+  /* Same fix as .section-kicker: gold-elegant fails WCAG AA on this light card background. */
   margin-bottom: 10px;
-  color: var(--gold-elegant);
+  color: var(--gold-deep);
   font-size: 0.7rem;
   font-weight: 820;
   letter-spacing: 0.12em;
@@ -650,17 +737,40 @@ p {
 /* ---------- Diferenciais ---------- */
 
 .differentials-section {
+  position: relative;
   border-top: 1px solid var(--line);
   background: var(--paper-bright);
 }
 
 .differentials-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-auto-rows: minmax(150px, auto);
   gap: 16px;
 }
 
+/* Editorial asymmetric placement — card 1 (the general, non-procedure-specific
+   promise) is the visual anchor, deliberately not one of the specific
+   treatments, so no single procedure reads as pushed harder than the others. */
+.differential-card:nth-child(1) {
+  grid-column: span 3;
+  grid-row: span 2;
+}
+
+.differential-card:nth-child(2),
+.differential-card:nth-child(3) {
+  grid-column: span 3;
+}
+
+.differential-card:nth-child(4),
+.differential-card:nth-child(5),
+.differential-card:nth-child(6) {
+  grid-column: span 2;
+}
+
 .differential-card {
+  display: flex;
+  flex-direction: column;
   padding: 32px 28px;
   border: 1px solid var(--line);
   border-radius: 14px;
@@ -670,6 +780,10 @@ p {
     transform 260ms cubic-bezier(0.16, 1, 0.3, 1),
     box-shadow 260ms ease,
     border-color 260ms ease;
+}
+
+.differential-card:nth-child(1) {
+  justify-content: center;
 }
 
 .differential-card:hover {
@@ -684,9 +798,19 @@ p {
   width: 52px;
   height: 52px;
   margin-bottom: 22px;
-  color: var(--gold-elegant);
+  color: var(--gold-deep);
   border: 1px solid rgba(173, 154, 85, 0.36);
   border-radius: 10px;
+}
+
+.differential-card:nth-child(1) .differential-icon {
+  width: 64px;
+  height: 64px;
+}
+
+.differential-card:nth-child(1) .differential-icon svg {
+  width: 30px;
+  height: 30px;
 }
 
 .differential-icon svg {
@@ -700,25 +824,83 @@ p {
   line-height: 1.15;
 }
 
+.differential-card:nth-child(1) h3 {
+  font-family: var(--serif);
+  font-size: clamp(1.9rem, 2.6vw, 2.4rem);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.differential-card:nth-child(1) p {
+  font-size: 1.05rem;
+  max-width: 32ch;
+}
+
 .differential-card p {
   margin-bottom: 0;
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 /* ---------- Tratamentos ---------- */
 
 .treatments-section {
+  position: relative;
   background: var(--paper);
 }
 
-.treatment-grid {
+.treatment-panel {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+  gap: 20px;
 }
 
-.treatment-card {
+.treatment-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 4px;
+}
+
+.treatment-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 54px;
+  padding: 0 18px;
+  color: var(--muted);
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: none;
+  font-family: inherit;
+  font-size: 0.98rem;
+  font-weight: 780;
+  cursor: pointer;
+  transition: color 200ms ease, border-color 200ms ease;
+}
+
+.treatment-tab:hover,
+.treatment-tab:focus-visible {
+  color: var(--ink);
+  outline: none;
+}
+
+.treatment-tab.is-active {
+  color: var(--ink);
+  border-bottom-color: var(--gold-deep);
+}
+
+.tab-index {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  color: var(--gold-deep);
+}
+
+.treatment-panels {
+  position: relative;
+}
+
+.treatment-content {
   display: flex;
   flex-direction: column;
   min-height: 380px;
@@ -728,16 +910,25 @@ p {
   border-radius: 14px;
   background: var(--paper-bright);
   box-shadow: 0 16px 44px rgba(32, 33, 31, 0.05);
-  transition:
-    transform 260ms cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 260ms ease,
-    border-color 260ms ease;
 }
 
-.treatment-card:hover {
-  border-color: rgba(173, 154, 85, 0.4);
-  box-shadow: 0 28px 60px rgba(32, 33, 31, 0.1);
-  transform: translateY(-4px);
+.treatment-content[hidden] {
+  display: none;
+}
+
+.treatment-content:not([hidden]) {
+  animation: treatment-panel-in 420ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes treatment-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .treatment-icon {
@@ -746,7 +937,7 @@ p {
   width: 54px;
   height: 54px;
   margin-bottom: 40px;
-  color: var(--gold-elegant);
+  color: var(--gold-deep);
   border: 1px solid rgba(173, 154, 85, 0.36);
   border-radius: 10px;
 }
@@ -756,13 +947,13 @@ p {
   height: 27px;
 }
 
-.treatment-card h3 {
+.treatment-content h3 {
   margin-bottom: 14px;
   font-size: clamp(1.7rem, 2.6vw, 2.2rem);
   line-height: 1.05;
 }
 
-.treatment-card > p:last-of-type {
+.treatment-content > p:last-of-type {
   margin-bottom: 24px;
   color: var(--muted);
   flex-grow: 1;
@@ -780,14 +971,14 @@ p {
   font-size: 0.9rem;
   font-weight: 820;
   cursor: pointer;
-  border-bottom: 1px solid var(--gold-elegant);
+  border-bottom: 1px solid var(--gold-deep);
   padding-bottom: 2px;
   transition: color 180ms ease, gap 180ms ease;
 }
 
 .treatment-more:hover,
 .treatment-more:focus-visible {
-  color: var(--gold-elegant);
+  color: var(--gold-deep);
   gap: 12px;
   outline: none;
 }
@@ -849,12 +1040,12 @@ p {
 
 .modal-close {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 16px;
+  right: 16px;
   display: grid;
   place-items: center;
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
   color: var(--ink);
   border: 1px solid var(--line);
   border-radius: 50%;
@@ -864,8 +1055,8 @@ p {
 
 .modal-close:hover,
 .modal-close:focus-visible {
-  border-color: var(--gold-elegant);
-  color: var(--gold-elegant);
+  border-color: var(--gold-deep);
+  color: var(--gold-deep);
   outline: none;
 }
 
@@ -903,12 +1094,13 @@ p {
 .modal-points p {
   margin-bottom: 0;
   color: var(--muted);
-  font-size: 0.94rem;
+  font-size: 1rem;
 }
 
 /* ---------- Como funciona / timeline ---------- */
 
 .process-section {
+  position: relative;
   color: var(--paper-bright);
   background: var(--graphite-900);
 }
@@ -959,9 +1151,12 @@ p {
   height: 2px;
   content: "";
   background: linear-gradient(90deg, var(--gold-soft), var(--gold-elegant));
-  transform: scaleX(0);
   transform-origin: left center;
-  transition: transform 1200ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.js-reveal-ready .process-list::before {
+  transform: scaleX(0);
 }
 
 .process-list.is-visible::before {
@@ -969,17 +1164,41 @@ p {
 }
 
 .process-list li {
+  position: relative;
   min-height: 300px;
   padding: 30px;
+  overflow: hidden;
   background: var(--graphite-850);
 }
 
 .process-list span {
   display: block;
+  position: relative;
+  z-index: 1;
   margin-bottom: 72px;
   color: var(--gold-soft);
   font-family: var(--serif);
   font-size: 1.1rem;
+}
+
+/* Oversized decorative numeral — purely visual, aria-hidden, sits behind the
+   real (small, accessible) numeral and never touches the heading/body text. */
+.process-list .step-index-ghost {
+  position: absolute;
+  z-index: 0;
+  top: -0.15em;
+  left: 18px;
+  margin-bottom: 0;
+  color: var(--gold-soft);
+  font-size: clamp(4.5rem, 9vw, 7rem);
+  line-height: 1;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.process-list li > div {
+  position: relative;
+  z-index: 1;
 }
 
 .process-list h3 {
@@ -992,7 +1211,7 @@ p {
 .process-list p {
   margin-bottom: 0;
   color: var(--muted-dark);
-  font-size: 0.92rem;
+  font-size: 1rem;
 }
 
 /* ---------- Atendimento em Alfenas ---------- */
@@ -1047,14 +1266,14 @@ p {
   color: var(--ink);
   font-size: 0.9rem;
   font-weight: 820;
-  text-decoration-color: var(--gold-elegant);
+  text-decoration-color: var(--gold-deep);
   text-decoration-thickness: 1px;
   text-underline-offset: 6px;
 }
 
 .local-map-link:hover,
 .local-map-link:focus-visible {
-  color: var(--gold-elegant);
+  color: var(--gold-deep);
   outline: none;
 }
 
@@ -1069,20 +1288,42 @@ p {
 }
 
 .local-service-list article {
+  position: relative;
   display: grid;
   grid-template-columns: 42px minmax(0, 1fr);
   gap: 18px;
   align-items: start;
   padding: 28px;
+  overflow: hidden;
   background: var(--paper);
 }
 
 .local-service-list article > div {
+  position: relative;
+  z-index: 1;
   min-width: 0;
 }
 
+/* Oversized decorative numeral — mirrors the "Como funciona" treatment on a
+   light background; aria-hidden, sits behind the real content, never competes
+   with it for legibility. */
+.local-service-list .step-index-ghost {
+  position: absolute;
+  z-index: 0;
+  top: -0.2em;
+  left: 8px;
+  color: var(--gold-deep);
+  font-family: var(--serif);
+  font-size: clamp(3.5rem, 7vw, 5.5rem);
+  line-height: 1;
+  opacity: 0.14;
+  pointer-events: none;
+}
+
 .local-service-list span {
-  color: var(--gold-elegant);
+  position: relative;
+  z-index: 1;
+  color: var(--gold-deep);
   font-family: var(--serif);
   font-size: 1rem;
 }
@@ -1098,7 +1339,7 @@ p {
 .local-service-list p {
   margin-bottom: 0;
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 /* ---------- FAQ ---------- */
@@ -1184,7 +1425,7 @@ p {
 .faq-list details p {
   margin: -4px 22px 22px;
   color: var(--muted);
-  font-size: 0.96rem;
+  font-size: 1rem;
 }
 
 /* ---------- CTA final ---------- */
@@ -1329,7 +1570,7 @@ p {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr 1fr;
+  grid-template-columns: 1.2fr 1fr 1fr;
   gap: 32px;
   padding: clamp(52px, 7vw, 80px) clamp(20px, 5vw, 72px) 40px;
 }
@@ -1434,7 +1675,7 @@ p {
 
 .footer-map-address:hover,
 .footer-map-address:focus-visible {
-  color: var(--gold-elegant);
+  color: var(--gold-deep);
   outline: none;
 }
 
@@ -1596,7 +1837,7 @@ p {
 .privacy-content a:not(.button) {
   color: var(--ink);
   font-weight: 780;
-  text-decoration-color: var(--gold-elegant);
+  text-decoration-color: var(--gold-deep);
   text-underline-offset: 4px;
 }
 
@@ -1615,7 +1856,7 @@ p {
 
 .privacy-outline:hover,
 .privacy-outline:focus-visible {
-  border-color: var(--gold-elegant);
+  border-color: var(--gold-deep);
   background: var(--paper-bright);
 }
 
@@ -1628,16 +1869,6 @@ p {
 }
 
 /* ---------- Responsive ---------- */
-
-@media (max-width: 1180px) {
-  .footer-grid {
-    grid-template-columns: 1.2fr 1fr 1fr;
-  }
-
-  .footer-col:last-child {
-    grid-column: 1 / -1;
-  }
-}
 
 @media (max-width: 1040px) {
   .site-header {
@@ -1683,9 +1914,21 @@ p {
     grid-template-columns: minmax(0, 1fr) minmax(240px, 0.4fr);
   }
 
-  .differentials-grid,
-  .treatment-grid {
+  .differentials-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .differential-card {
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
+  }
+
+  .differential-card:nth-child(1) {
+    justify-content: flex-start;
+  }
+
+  .differential-card:nth-child(1) h3 {
+    font-size: 1.35rem;
   }
 
   .process-list {
@@ -1740,9 +1983,22 @@ p {
     position: static;
   }
 
-  .differentials-grid,
-  .treatment-grid {
+  .differentials-grid {
     grid-template-columns: 1fr;
+  }
+
+  .differential-card:nth-child(1) h3 {
+    font-size: 1.6rem;
+  }
+
+  .treatment-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .treatment-tab {
+    flex: 0 0 auto;
   }
 
   .professional-photo {
@@ -1851,19 +2107,19 @@ p {
   .process-header h2,
   .local-copy h2,
   .faq-heading h2,
-  .cta-final-copy h2 {
+  .cta-final-copy h2,
+  .display-heading {
     font-size: clamp(2.55rem, 12vw, 3.75rem);
   }
 
   .differential-card,
-  .treatment-card,
+  .treatment-content,
   .local-service-list article,
   .process-list li {
     padding: 26px 22px;
   }
 
   .differentials-grid,
-  .treatment-grid,
   .process-list {
     grid-template-columns: 1fr;
   }
@@ -1927,12 +2183,28 @@ p {
     transition-duration: 0.01ms !important;
   }
 
-  [data-reveal] {
+  [data-reveal],
+  .js-reveal-ready [data-reveal] {
     opacity: 1;
     transform: none;
   }
 
-  .process-list::before {
+  [data-reveal="wipe"],
+  .js-reveal-ready [data-reveal="wipe"] {
+    clip-path: inset(0);
+  }
+
+  .process-list::before,
+  .js-reveal-ready .process-list::before {
     transform: scaleX(1);
+  }
+
+  .rail-line,
+  .js-reveal-ready .rail-line {
+    transform: scaleY(1);
+  }
+
+  .treatment-content:not([hidden]) {
+    animation: none !important;
   }
 }

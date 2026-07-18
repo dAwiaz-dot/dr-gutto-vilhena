@@ -1,16 +1,29 @@
+// Arm the reveal/rail hidden states only once JS is confirmed running — content
+// stays visible by default (safe fallback) until this class is added, so a
+// throttled/backgrounded tab can never leave real content permanently hidden.
+document.documentElement.classList.add("js-reveal-ready");
+
 // Mobile nav toggle
 const toggle = document.querySelector(".nav-toggle");
 const nav = document.querySelector(".site-nav");
 if (toggle && nav) {
-  const closeMenu = () => {
+  const getNavFocusable = () => Array.from(nav.querySelectorAll("a"));
+
+  const closeMenu = ({ returnFocus = false } = {}) => {
     nav.classList.remove("is-open");
     toggle.setAttribute("aria-expanded", "false");
     toggle.setAttribute("aria-label", "Abrir menu");
+    if (returnFocus) toggle.focus();
   };
+
   toggle.addEventListener("click", () => {
     const isOpen = nav.classList.toggle("is-open");
     toggle.setAttribute("aria-expanded", String(isOpen));
     toggle.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
+    if (isOpen) {
+      const [firstLink] = getNavFocusable();
+      if (firstLink) firstLink.focus();
+    }
   });
   nav.addEventListener("click", (event) => {
     const link = event.target.closest("a");
@@ -18,7 +31,24 @@ if (toggle && nav) {
     closeMenu();
   });
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") closeMenu();
+    if (!nav.classList.contains("is-open")) return;
+    if (event.key === "Escape") {
+      closeMenu({ returnFocus: true });
+      return;
+    }
+    if (event.key === "Tab") {
+      const focusable = getNavFocusable();
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
   });
   document.addEventListener("click", (event) => {
     if (!nav.classList.contains("is-open")) return;
@@ -37,6 +67,14 @@ if (header) {
   window.addEventListener("scroll", updateHeader, { passive: true });
 }
 
+// Safety net: whatever happens to the observers below (throttled tab, unusual
+// viewport, browser quirk), real content must never stay hidden indefinitely.
+const forceVisibleAfter = (elements, ms) => {
+  window.setTimeout(() => {
+    elements.forEach((el) => el.classList.add("is-visible"));
+  }, ms);
+};
+
 // Reveal-on-scroll
 const revealTargets = document.querySelectorAll("[data-reveal]");
 if (revealTargets.length && "IntersectionObserver" in window) {
@@ -52,14 +90,15 @@ if (revealTargets.length && "IntersectionObserver" in window) {
     { threshold: 0.14, rootMargin: "0px 0px -40px 0px" }
   );
   revealTargets.forEach((el) => revealObserver.observe(el));
+  forceVisibleAfter(revealTargets, 1500);
 } else {
   revealTargets.forEach((el) => el.classList.add("is-visible"));
 }
 
-// Timeline connecting line
-const timeline = document.querySelector("[data-timeline]");
-if (timeline && "IntersectionObserver" in window) {
-  const timelineObserver = new IntersectionObserver(
+// Rail segments (spine connecting hero -> diferenciais -> tratamentos -> como funciona)
+const railSegments = document.querySelectorAll("[data-rail]");
+if (railSegments.length && "IntersectionObserver" in window) {
+  const railObserver = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -70,9 +109,52 @@ if (timeline && "IntersectionObserver" in window) {
     },
     { threshold: 0.3 }
   );
-  timelineObserver.observe(timeline);
-} else if (timeline) {
-  timeline.classList.add("is-visible");
+  railSegments.forEach((segment) => railObserver.observe(segment));
+  forceVisibleAfter(railSegments, 1500);
+} else {
+  railSegments.forEach((segment) => segment.classList.add("is-visible"));
+}
+
+// Treatment tabs (WAI-ARIA tabs pattern: roving tabindex + arrow keys)
+const treatmentTabs = Array.from(document.querySelectorAll("[data-treatment-tab]"));
+if (treatmentTabs.length) {
+  const treatmentPanels = Array.from(document.querySelectorAll("[data-treatment-panel]"));
+
+  const activateTreatmentTab = (tab, { focusTab = false } = {}) => {
+    const name = tab.dataset.treatmentTab;
+    treatmentTabs.forEach((t) => {
+      const isActive = t === tab;
+      t.classList.toggle("is-active", isActive);
+      t.setAttribute("aria-selected", String(isActive));
+      t.setAttribute("tabindex", isActive ? "0" : "-1");
+    });
+    treatmentPanels.forEach((panel) => {
+      const isActive = panel.dataset.treatmentPanel === name;
+      panel.classList.toggle("is-active", isActive);
+      if (isActive) {
+        panel.removeAttribute("hidden");
+      } else {
+        panel.setAttribute("hidden", "");
+      }
+    });
+    if (focusTab) tab.focus();
+  };
+
+  treatmentTabs.forEach((tab) => {
+    tab.addEventListener("click", () => activateTreatmentTab(tab));
+    tab.addEventListener("keydown", (event) => {
+      const currentIndex = treatmentTabs.indexOf(tab);
+      let targetIndex = null;
+      if (event.key === "ArrowRight") targetIndex = (currentIndex + 1) % treatmentTabs.length;
+      else if (event.key === "ArrowLeft")
+        targetIndex = (currentIndex - 1 + treatmentTabs.length) % treatmentTabs.length;
+      else if (event.key === "Home") targetIndex = 0;
+      else if (event.key === "End") targetIndex = treatmentTabs.length - 1;
+      if (targetIndex === null) return;
+      event.preventDefault();
+      activateTreatmentTab(treatmentTabs[targetIndex], { focusTab: true });
+    });
+  });
 }
 
 // Treatment modals

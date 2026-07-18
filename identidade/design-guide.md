@@ -26,18 +26,43 @@ Direção visual derivada da logo apresentada em cartão físico. Refinar os có
 
 ## Estilo geral
 
-Premium, sóbrio, clínico e masculino. A marca combina grafite, prata e dourado contido. O visual deve comunicar experiência, precisão e confiança, com bastante respiro e sem decoração excessiva.
+Premium, sóbrio, clínico e masculino — mas autoral, não genérico. A marca combina
+grafite, prata e dourado contido, e comunica experiência, precisão e confiança
+através da estrutura e do movimento, não apenas da paleta. O site e as peças devem
+ter uma assinatura visual reconhecível: uma "espinha" narrativa que conecta seções
+(linha fina que se desenha ao rolar a página, numeração grande como elemento
+gráfico, layouts editoriais assimétricos), em vez de grades genéricas repetidas.
+Bastante respiro continua obrigatório — a ousadia vem da composição e do ritmo,
+não da quantidade de elementos.
 
 ## Elementos-chave
 
-- Linhas finas em prata ou dourado translúcido.
+- Linhas finas em prata ou dourado translúcido, podendo se organizar como uma
+  "espinha" vertical (ponto + traço) que acompanha seções conectadas (herói,
+  diferenciais, tratamentos, como funciona), reforçando a ideia de jornada.
+- Numeração grande e tipográfica (ex.: 01, 02, 03) usada como elemento gráfico
+  estrutural em blocos de conteúdo — pode ganhar escala editorial e se
+  sobrepor discretamente ao layout, desde que o texto de conteúdo real
+  permaneça 100% legível por cima (elemento decorativo, nunca lido por leitor
+  de tela).
+- Grades assimétricas são preferíveis a grades uniformes repetidas: variar
+  proporção, escala e disposição dos cards em vez de repetir o mesmo formato
+  3x2 ou 1x3 em seções diferentes.
+- Movimento com assinatura própria: entradas por recorte ("clip-path"),
+  linhas que se desenham ao rolar, transições coreografadas por seção —
+  específicas do momento, não o mesmo fade genérico aplicado a tudo em todo
+  lugar. Nenhuma biblioteca de animação externa; tudo em CSS/JS nativo.
+- Todo movimento deve neutralizar completamente sob configurações de
+  "movimento reduzido" do usuário (sem exceções).
 - Cards com cantos discretamente arredondados, entre 8 e 14 px.
 - CTA principal dourado com texto grafite.
 - CTA secundário com fundo transparente e borda prata.
 - Sombras profundas e suaves, sem brilho.
 - Ícones lineares simples.
 - Fotos reais do profissional e do consultório sempre que disponíveis.
-- Textos grandes e legíveis para atender também ao público idoso.
+- Textos grandes e legíveis para atender também ao público idoso — inclusive
+  nos elementos gráficos maiores: numeração e recortes decorativos nunca
+  podem reduzir a legibilidade do texto de conteúdo real.
 
 ## O que nunca fazer
 
