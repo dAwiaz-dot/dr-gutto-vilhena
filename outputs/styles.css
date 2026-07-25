@@ -136,63 +136,6 @@ p {
   clip-path: inset(0 0 0% 0);
 }
 
-/* ---------- Rail (spine connecting hero -> diferenciais -> tratamentos -> como funciona) ---------- */
-
-.rail-marker {
-  /* Sits inside the section's own left padding gutter (min clamp(20px,5vw,72px),
-     ~39px+ once the marker becomes visible at 781px+) — always smaller than
-     that minimum so it never overlaps the content start. */
-  position: absolute;
-  top: 0;
-  left: clamp(8px, 1.6vw, 18px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  pointer-events: none;
-}
-
-.rail-dot {
-  flex: 0 0 auto;
-  width: 8px;
-  height: 8px;
-  margin-bottom: 10px;
-  border-radius: 50%;
-  background: currentColor;
-}
-
-.rail-line {
-  width: 2px;
-  flex: 1 1 auto;
-  min-height: 60px;
-  background: currentColor;
-  opacity: 0.3;
-  transform-origin: top center;
-  transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.js-reveal-ready .rail-line {
-  transform: scaleY(0);
-}
-
-.rail-line.is-visible {
-  transform: scaleY(1);
-}
-
-.rail-marker--dark {
-  color: var(--gold-soft);
-}
-
-.rail-marker--light {
-  color: var(--gold-deep);
-}
-
-@media (max-width: 780px) {
-  .rail-marker {
-    display: none;
-  }
-}
-
 .skip-link {
   position: fixed;
   top: 12px;
@@ -2226,11 +2169,6 @@ p {
   .process-list::before,
   .js-reveal-ready .process-list::before {
     transform: scaleX(1);
-  }
-
-  .rail-line,
-  .js-reveal-ready .rail-line {
-    transform: scaleY(1);
   }
 
   .treatment-content:not([hidden]) {
