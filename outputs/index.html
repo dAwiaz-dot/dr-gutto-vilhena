@@ -36,7 +36,7 @@
     <link rel="canonical" href="https://www.drguttovilhena.com.br/" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="preload" href="assets/dental-clinic-hero.webp" as="image" type="image/webp" fetchpriority="high" />
-    <link rel="stylesheet" href="styles.css?v=20260725-remove-stray-rail-line" />
+    <link rel="stylesheet" href="styles.css?v=20260725-fix-rail-line-position" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -311,6 +311,10 @@
       </section>
 
       <section class="section differentials-section" id="diferenciais" aria-labelledby="diferenciais-title">
+        <div class="rail-marker rail-marker--light" aria-hidden="true">
+          <span class="rail-dot"></span>
+          <span class="rail-line" data-rail></span>
+        </div>
         <div class="section-heading">
           <div data-reveal>
             <p class="section-kicker">Por que escolher esse acompanhamento</p>
@@ -390,6 +394,10 @@
       </section>
 
       <section class="section treatments-section" id="tratamentos" aria-labelledby="tratamentos-title">
+        <div class="rail-marker rail-marker--light" aria-hidden="true">
+          <span class="rail-dot"></span>
+          <span class="rail-line" data-rail></span>
+        </div>
         <div class="section-heading">
           <div data-reveal>
             <p class="section-kicker">Áreas de atendimento</p>
@@ -655,6 +663,9 @@
       </div>
 
       <section class="section process-section" id="abordagem" aria-labelledby="abordagem-title">
+        <div class="rail-marker rail-marker--dark rail-marker--end" aria-hidden="true">
+          <span class="rail-dot"></span>
+        </div>
         <div class="process-header">
           <div data-reveal>
             <p class="section-kicker section-kicker-light">Como funciona</p>
@@ -993,6 +1004,6 @@
       </svg>
     </a>
 
-    <script src="script.js?v=20260725-remove-stray-rail-line"></script>
+    <script src="script.js?v=20260725-fix-rail-line-position"></script>
   </body>
 </html>

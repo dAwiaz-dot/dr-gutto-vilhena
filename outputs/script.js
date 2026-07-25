@@ -95,6 +95,26 @@ if (revealTargets.length && "IntersectionObserver" in window) {
   revealTargets.forEach((el) => el.classList.add("is-visible"));
 }
 
+// Rail segments (spine connecting hero -> diferenciais -> tratamentos -> como funciona)
+const railSegments = document.querySelectorAll("[data-rail]");
+if (railSegments.length && "IntersectionObserver" in window) {
+  const railObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+  railSegments.forEach((segment) => railObserver.observe(segment));
+  forceVisibleAfter(railSegments, 1500);
+} else {
+  railSegments.forEach((segment) => segment.classList.add("is-visible"));
+}
+
 // Treatment tabs (WAI-ARIA tabs pattern: roving tabindex + arrow keys)
 const treatmentTabs = Array.from(document.querySelectorAll("[data-treatment-tab]"));
 if (treatmentTabs.length) {
