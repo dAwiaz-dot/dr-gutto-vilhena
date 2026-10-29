@@ -1,18 +1,14 @@
+# Este repositório guarda SÓ o site (pasta outputs/ + vercel.json), que a Vercel publica.
+# Memória, marketing, campanhas, comercial e o resto do workspace ficam só no computador.
+/*
+!/.gitignore
+!/.gitattributes
+!/vercel.json
+!/outputs/
+
+# dentro do site
 .DS_Store
-Thumbs.db
-.vscode/
-.idea/
-.claude/projects/
-.claude/sessions/
-.claude/shell-snapshots/
-.claude/telemetry/
-.claude/file-history/
-.claude/backups/
-node_modules/
-tmp/
 *.log
 *.tmp
-dados/*
-!dados/README.md
 .vercel
 .env*
